@@ -22,9 +22,7 @@
       "url": "https://math.ttu.edu",
       "startDate": "2022-8",
       "summary": " ",
-    }
-  ],
-  "work": [
+    },
     {
       "name": "Department of Mathematics and Statistics, University of California, Irvine",
       "position": "Visiting Assistant Professor",
@@ -32,25 +30,21 @@
       "startDate": "2020-7",
       "endDate": "2022-6",
       "summary": " ",
-    }
-  ],
-  "work": [
+    },
     {
-      "name": "Department of Mathematics and Statistics, University of California, Irvine",
-      "position": "Visiting Assistant Professor",
-      "url": "https://math.uci.edu",
-      "startDate": "2020-7",
-      "endDate": "2022-6",
+      "name": "Department of Mathematics and Statistics, University of California, Berkeley",
+      "position": "Postdoc",
+      "url": "https://math.ucb.edu",
+      "startDate": "2018-7",
+      "endDate": "2020-6",
       "summary": " ",
-    }
-  ],
-  "work": [
+    },
     {
-      "name": "Department of Mathematics and Statistics, University of California, Irvine",
-      "position": "Visiting Assistant Professor",
+      "name": "Department of Mathematics and Statistics, University of Houston",
+      "position": "Postdoc",
       "url": "https://math.uci.edu",
-      "startDate": "2020-7",
-      "endDate": "2022-6",
+      "startDate": "2014-9",
+      "endDate": "2018-6",
       "summary": " ",
     }
   ],
