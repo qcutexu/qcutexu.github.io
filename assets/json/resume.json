@@ -1,61 +1,68 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Yifan Wang",
+    "label": "Assistant Professor",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "Yifan.Wang@ttu. edu",
+    "phone": "",
+    "url": "https://qcutexu.github.io",
+    "summary": "Consider my self as a computational mathematician with an interest in tackling problems related to bioengineering and biomedical applications.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
+      "address": "1108 Memorial Circle",
+      "postalCode": "TX 79409",
+      "city": "Lubbock",
       "countryCode": "US",
-      "region": "California"
+      "region": "Texas"
     },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
-      }
-    ]
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "name": "Department of Mathematics and Statistics, Texas Tech University",
+      "position": "Assistant Professor",
+      "url": "https://math.ttu.edu",
+      "startDate": "2022-8",
+      "summary": " ",
     }
   ],
-  "volunteer": [
+  "work": [
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "name": "Department of Mathematics and Statistics, University of California, Irvine",
+      "position": "Visiting Assistant Professor",
+      "url": "https://math.uci.edu",
+      "startDate": "2020-7",
+      "endDate": "2022-6",
+      "summary": " ",
+    }
+  ],
+  "work": [
+    {
+      "name": "Department of Mathematics and Statistics, University of California, Irvine",
+      "position": "Visiting Assistant Professor",
+      "url": "https://math.uci.edu",
+      "startDate": "2020-7",
+      "endDate": "2022-6",
+      "summary": " ",
+    }
+  ],
+  "work": [
+    {
+      "name": "Department of Mathematics and Statistics, University of California, Irvine",
+      "position": "Visiting Assistant Professor",
+      "url": "https://math.uci.edu",
+      "startDate": "2020-7",
+      "endDate": "2022-6",
+      "summary": " ",
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
+      "institution": "Louisiana Tech University",
+      "location": "Ruston, LA",
+      "url": "https://www.latech.edu",
+      "area": "Computational Analysis and Modeling",
       "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "startDate": "2009-9",
+      "endDate": "2014-5",
     }
   ],
   "awards": [
