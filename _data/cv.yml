@@ -41,29 +41,29 @@
     - year: 2024
       items:
         - Excellence in Innovation Award, Department of Mathematics and Statistics, Texas Tech University
-      
+        
     - year: 2023
       items:
         - Travel Support for Mathematicians $42,000, Simon Foundation, 2023-2028
         - NSF #2247001, Collaborative Research: Mechanistic modeling of cell encapsulation, co-PI, $82,000., 2023-2026.
         - SIAM Travel award for attending ICIAM 2023 meeting in Japan, 2023.
         - 2023 Summer Faculty Fellowship program in Israel
-
-     - year: 2021-2022
+        
+    - year: 2021-2022
       items:
         - Mathematical Congress of the Americas Travel Grant
         - Center Fellow Award of the NSF-Simons Center at UC Irvine
      
-     - year: 2020 and before
+    - year: 2020 and before
       items:
-      - NSF-Simons Center Interdisciplinary Opportunity Award on Multiscale Cell Fate Research, single PI, $9,000., 2019-2020.
-      - 2nd Place in presentation contest in the Coastal postdoctoral annual meeting at LBNL, 2018.
-      - 1st place in poster presentation competition in the UH postdoctoral research annual meeting, 2018.
-      - 1st and 2nd Place Price in the visualization competition (VIZAPALOOZA) organized by the Center for Advanced Computing & Data Systems, 2016 and 2015, respectively.
-      - NSF travel award to attending the International Workshop on Fluid-Structure Interaction Problems, National University of Singapore, Singapore, 2016.
-      - Travel grants to attending SC16 supercomputing conference, 2015.
-      - SIAM student travel award for attending SIAM 2012 Annual conference in Seattle, WA, 2012.
-      - Dr. Walter E Koss graduate student scholarship, Louisiana Tech University, 2012.
+        - NSF-Simons Center Interdisciplinary Opportunity Award on Multiscale Cell Fate Research, single PI, $9,000., 2019-2020.
+        - 2nd Place in presentation contest in the Coastal postdoctoral annual meeting at LBNL, 2018.
+        - 1st place in poster presentation competition in the UH postdoctoral research annual meeting, 2018.
+        - 1st and 2nd Place Price in the visualization competition (VIZAPALOOZA) organized by the Center for Advanced Computing & Data Systems, 2016 and 2015, respectively.
+        - NSF travel award to attending the International Workshop on Fluid-Structure Interaction Problems, National University of Singapore, Singapore, 2016.
+        - Travel grants to attending SC16 supercomputing conference, 2015.
+        - SIAM student travel award for attending SIAM 2012 Annual conference in Seattle, WA, 2012.
+        - Dr. Walter E Koss graduate student scholarship, Louisiana Tech University, 2012.
 
 - title: Academic Interests
   type: nested_list
