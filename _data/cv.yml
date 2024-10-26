@@ -68,10 +68,11 @@
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Computational Fluid Dynamics (Fluid Structure Interaction); Computational Biology; Mathematical and numerical
-models for the cardiovascular system; Numerical Analysis; Scientific Machine Learning; Parallel Computing.
+    - title: Computational Fluid Dynamics (Fluid Structure Interaction)
+    - title: Computational Biology
+    - title: Mathematical modeling for the cardiovascular system
+    - title: Numerical Analysis
+    - title: Scientific Machine Learning
+    - title: Parallel Computing.
    
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hiking, circling, etc.
+
