@@ -2,96 +2,76 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Yifan Wang
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+    - title: PhD in Computational Analysis and Modeling
+      institution: Louisiana Tech University  
+      year: 2014
+      
+    - title: Master in Applied Mathematics
+      institution: Louisiana Tech University
+      year: 2012
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Tenure-track Assistant Professor
+      institution: Department of Mathematics and Statistics, Texas Tech University.
+      year: 2022-current
+     
+    - title: Visiting Assistant Professor
+      institution: Department of Mathematics, University of California, Irvine.
+      year: 2020-2022
+ 
+    - title: Postdoc Scholar
+      institution: Department of Mathematics, University of California, Berkeley.
+      year: 2018-2020
+
+    - title: Postdoc Scholar
+      institution: Department of Mathematics, University of Houston.
+      year: 2014-2018
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2024
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Excellence in Innovation Award, Department of Mathematics and Statistics, Texas Tech University
+      
+    - year: 2023
       items:
-        - Max Planck Medal
+        - Travel Support for Mathematicians $42,000, Simon Foundation, 2023-2028
+        - NSF #2247001, Collaborative Research: Mechanistic modeling of cell encapsulation, co-PI, $82,000., 2023-2026.
+        - SIAM Travel award for attending ICIAM 2023 meeting in Japan, 2023.
+        - 2023 Summer Faculty Fellowship program in Israel
+
+     - year: 2021-2022
+      items:
+        - Mathematical Congress of the Americas Travel Grant
+        - Center Fellow Award of the NSF-Simons Center at UC Irvine
+     
+     - year: 2020 and before
+      items:
+      - NSF-Simons Center Interdisciplinary Opportunity Award on Multiscale Cell Fate Research, single PI, $9,000., 2019-2020.
+      - 2nd Place in presentation contest in the Coastal postdoctoral annual meeting at LBNL, 2018.
+      - 1st place in poster presentation competition in the UH postdoctoral research annual meeting, 2018.
+      - 1st and 2nd Place Price in the visualization competition (VIZAPALOOZA) organized by the Center for Advanced Computing & Data Systems, 2016 and 2015, respectively.
+      - NSF travel award to attending the International Workshop on Fluid-Structure Interaction Problems, National University of Singapore, Singapore, 2016.
+      - Travel grants to attending SC16 supercomputing conference, 2015.
+      - SIAM student travel award for attending SIAM 2012 Annual conference in Seattle, WA, 2012.
+      - Dr. Walter E Koss graduate student scholarship, Louisiana Tech University, 2012.
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
+    - title: Computational Fluid Dynamics (Fluid Structure Interaction); Computational Biology; Mathematical and numerical
+models for the cardiovascular system; Numerical Analysis; Scientific Machine Learning; Parallel Computing.
+   
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Hiking, circling, etc.
