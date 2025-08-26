@@ -58,6 +58,10 @@
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .container { max-width: var(--maxw); margin: 0 auto; padding: 1.25rem; }
+    /* Narrower header/banner */
+    .container.nav { max-width: 900px; }
+    header .nav-links, header .toggle { max-width: 900px; margin: 0 auto; padding: 0 1.25rem; }
+
     .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
     .skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; background: var(--accent); color: #000; padding: .5rem .75rem; border-radius: .5rem; }
 
@@ -69,7 +73,7 @@
     }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
     .brand { display: flex; align-items: center; gap: .75rem; }
-    .brand img { width: 52px; height: 52px; border-radius: 999px; object-fit: cover; box-shadow: var(--shadow); }
+    dpx; height:  44px; border-radius: 999px; object-fit: cover; box-shadow: var(--shadow); }
     .brand h1 { font-size: 1.125rem; margin: 0; }
     .tagline { color: var(--muted); font-size: .95rem; }
     .nav-links { display: flex; gap: .75rem; flex-wrap: wrap; }
@@ -134,7 +138,10 @@
       .card, .hero-card { box-shadow: none; border: 1px solid #ddd; }
       a { color: #000; text-decoration: none; }
     }
-  </style>
+    /* Size override for smaller banner headshot */
+  .brand img { width: 28px; height: 28px; }
+  @media (max-width: 900px) { .brand img { width: 26px; height: 26px; } }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
