@@ -1,6 +1,616 @@
-<!-- Replace this file's content with the HTML from your canvas.
-Open the canvas, copy all, and paste here, then re-upload to your host.
-This placeholder exists so you can download a complete starter bundle now. -->
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Your Site</title></head>
-<body><p>Replace me with the HTML from the canvas.</p></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Yifan Wang — Mathematics</title>
+  <meta name="description" content="Personal academic website for Dr. Yifan Wang — research, publications, teaching, and contact." />
+  <link rel="icon" href="favicon.ico" />
+  <meta property="og:title" content="Prof. First Last — Mathematics" />
+  <meta property="og:description" content="Research, publications, teaching, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.example/" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- MathJax for LaTeX rendering -->
+  <script>
+    window.MathJax = {
+      tex: {inlineMath: [["$","$"],["\\(","\\)"]], displayMath: [["$$","$$"],["\\[","\\]"]]},
+      options: { skipHtmlTags: { 'br': true } }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <style>
+    :root {
+      --bg: #0b1220;          /* slate-950-ish */
+      --bg-elev: #0f172a;     /* slate-900 */
+      --fg: #e5e7eb;          /* slate-200 */
+      --muted: #94a3b8;       /* slate-400 */
+      --card: #111827;        /* gray-900 */
+      --accent: #38bdf8;      /* sky-400 */
+      --accent-2: #a78bfa;    /* violet-400 */
+      --ring: #334155;        /* slate-700 */
+      --link: #7dd3fc;        /* sky-300 */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 1rem;
+      --maxw: 1100px;
+    }
+    .light {
+      --bg: #ffffff;
+      --bg-elev: #f8fafc;
+      --fg: #0f172a;
+      --muted: #475569;
+      --card: #ffffff;
+      --accent: #0ea5e9;
+      --accent-2: #7c3aed;
+      --ring: #cbd5e1;
+      --link: #0369a1;
+      --shadow: 0 8px 24px rgba(2, 6, 23, .08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg); color: var(--fg);
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 1.25rem; }
+    .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; background: var(--accent); color: #000; padding: .5rem .75rem; border-radius: .5rem; }
+
+    /* Header / Nav */
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px);
+      background: color-mix(in oklab, var(--bg-elev), transparent 35%);
+      border-bottom: 1px solid var(--ring);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: flex; align-items: center; gap: .75rem; }
+    .brand img { width: 52px; height: 52px; border-radius: 999px; object-fit: cover; box-shadow: var(--shadow); }
+    .brand h1 { font-size: 1.125rem; margin: 0; }
+    .tagline { color: var(--muted); font-size: .95rem; }
+    .nav-links { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .nav-links a { padding: .5rem .75rem; border: 1px solid var(--ring); border-radius: .65rem; background: color-mix(in oklab, var(--card), transparent 10%); }
+
+    .toggle { display: inline-flex; gap: .5rem; align-items: center; border: 1px solid var(--ring); border-radius: 999px; padding: .4rem .65rem; background: var(--card); }
+    .toggle button { background: none; border: none; color: var(--fg); cursor: pointer; font-size: .95rem; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1.25rem; align-items: center; padding: 1.5rem 0; }
+    .hero-card { background: var(--card); border: 1px solid var(--ring); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
+    .hero h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem); margin: 0 0 .5rem; }
+    .hero p { margin: .25rem 0; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+    .chip { background: color-mix(in oklab, var(--accent), transparent 80%); color: var(--fg); border: 1px solid var(--ring); padding: .3rem .6rem; border-radius: 999px; font-size: .85rem; }
+
+    .contact-card dt { color: var(--muted); font-size: .875rem; }
+    .contact-card dd { margin: 0 0 .5rem; }
+
+    section { padding: 2rem 0 1.25rem; }
+    section h3 { font-size: 1.35rem; margin: 0 0 .75rem; }
+    .card { background: var(--card); border: 1px solid var(--ring); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow); }
+
+    .grid { display: grid; gap: 1rem; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    /* Publications */
+    .pub-toolbar { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; margin-bottom: .75rem; }
+    .pub-toolbar input { padding: .55rem .75rem; border-radius: .5rem; border: 1px solid var(--ring); background: var(--bg-elev); color: var(--fg); width: min(100%, 420px); }
+    .pub-item { display: grid; grid-template-columns: 1fr auto; gap: .5rem .75rem; padding: .75rem; border: 1px dashed var(--ring); border-radius: .75rem; }
+    .pub-title { font-weight: 600; }
+    .pub-meta { color: var(--muted); font-size: .95rem; }
+    .pub-links a { margin-right: .5rem; }
+
+    /* Teaching */
+    .course { display: grid; grid-template-columns: 1fr auto; gap: .25rem .75rem; padding: .75rem; border: 1px solid var(--ring); border-radius: .75rem; }
+    .course small { color: var(--muted); }
+
+    /* Details */
+    details { border: 1px solid var(--ring); border-radius: .5rem; padding: .5rem .75rem; background: var(--bg-elev); }
+    summary { cursor: pointer; font-weight: 600; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--ring); padding: 1.25rem 0 3rem; color: var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav .menu-btn { display: inline-flex; }
+    }
+    @media (min-width: 901px) {
+      .nav .menu-btn { display: none; }
+    }
+
+    /* Print: make it clean */
+    @media print {
+      header, .toggle, .nav, .pub-toolbar, .chips, .menu-btn { display: none !important; }
+      body { background: #fff; color: #000; }
+      .card, .hero-card { box-shadow: none; border: 1px solid #ddd; }
+      a { color: #000; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <div class="brand">
+        <img src="headshot.jpg" alt="Headshot of Dr. Yifan Wang" />
+        <div>
+          <h1>Dr. Yifan Wang</h1>
+          <div class="tagline">Department of Mathematics & Statistics — Texas Tech University</div>
+        </div>
+      </div>
+      </div>
+      </div>
+      <nav class="nav-links" aria-label="Section links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#students">Students</a>
+        <a href="#talks">Talks</a>
+        <a href="#software">Software</a>
+        <a href="#service">Service</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="toggle" aria-label="Appearance toggle and menu">
+        <button id="themeToggle" title="Toggle light/dark">🌓</button>
+        <button class="menu-btn" id="menuBtn" title="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- Hero -->
+    <section class="hero" aria-label="Intro">
+      <div class="hero-card">
+        <h2>Hello! I’m <strong>Dr. Yifan Wang</strong>.</h2>
+        <p>I’m an Assistant Professor at Texas Tech University working on computational hemodynamics, fluid–structure interaction (FSI), numerical methods, and biomedical applications.</p>
+        <div class="chips">
+          <span class="chip">Computational Hemodynamics</span>
+          <span class="chip">Fluid–Structure Interaction</span>
+          <span class="chip">Numerical Analysis</span>
+          <span class="chip">Biomedical Modeling</span>
+        </div>
+      </div>
+      <div class="hero-card contact-card">
+        <dl>
+          <dt>Position</dt>
+          <dd>Assistant Professor of Mathematics & Statistics, Texas Tech University</dd>
+          <dt>Office</dt>
+          <dd>Math 227 • Lubbock, TX</dd>
+          <dt>Phone</dt>
+          <dd>(806) 834-1609</dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:yifan.wang@ttu.edu">yifan.wang@ttu.edu</a></dd>
+          <dt>Links</dt>
+          <dd>
+            <a href="https://scholar.google.com/citations?user=27tRrR0AAAAJ&hl=en">Google Scholar</a> • <a href="https://orcid.org/0000-0003-3292-4972">ORCID</a> • <a href="https://www.math.ttu.edu/~yifanwan/">TTU Page</a>
+          </dd>
+          <dt>CV</dt>
+          <dd><a href="Wang_Yifan_CV.pdf" download>Download CV (PDF)</a></dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-label="About">
+      <h3>About</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <p>I am an Assistant Professor in the Department of Mathematics & Statistics at Texas Tech University. My work blends mathematical modeling, numerical analysis, and high‑performance computing to study fluid–structure interaction (FSI) problems with biomedical applications—spanning cardiovascular flow, bioartificial pancreas design, and tumor–stroma dynamics. Before TTU (joined 2022), I was a Visiting Assistant Professor at UC Irvine (2020–2022), with postdoctoral training at the University of Houston (2014–2018) and UC Berkeley (2018–2020).</p>
+        </div>
+        <div class="card">
+          <ul>
+            <li>Ph.D., Louisiana Tech University, 2014 — Computational Analysis & Modeling</li>
+            <li>M.S., Louisiana Tech University, 2012 — Applied Mathematics</li>
+            <li>B.S., Wuhan University, 2008 — Electronic Engineering</li>
+            <li>Postdoctoral Fellow, University of Houston, 2014–2018 — FSI modeling</li>
+            <li>Postdoctoral Fellow, University of California, Berkeley, 2018–2020 — Mathematical modeling in medicine</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" aria-label="Research">
+      <h3>Research Interests</h3>
+      <div class="card">
+        <ul>
+          <li>Computational hemodynamics and patient‑specific cardiovascular modeling.</li>
+          <li>Fluid–structure interaction (incompressible viscous flow coupled with elastic structures).</li>
+          <li>Poroelastic media and bioartificial organ scaffold design.</li>
+          <li>Multiscale modeling for tumor–stroma interaction and drug response.</li>
+          <li>High‑performance computing, parallel algorithms, and numerical methods for PDEs.</li>
+        </ul>
+      </div>
+    </section>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" aria-label="Publications">
+      <h3>Publications</h3>
+      <div class="pub-toolbar">
+        <input id="pubFilter" type="search" placeholder="Filter by title, author, venue, year…" aria-label="Filter publications" />
+        <small class="muted">Type to filter. Click “BibTeX” to copy citation.</small>
+        <div style="margin-top:.5rem"><a href="https://scholar.google.com/citations?user=27tRrR0AAAAJ&hl=en" target="_blank" rel="noopener">View full list on Google Scholar ↗</a></div>
+      </div>
+
+      <div class="grid">
+        <!-- 2025 -->
+        <article class="pub-item" data-search="Rejuan; Wang; Validation of a Microfluidic Device Prototype; Circulating Tumor Cells Classification; International Journal for Numerical Methods in Biomedical Engineering; 2025; microfluidic; CTC; machine learning">
+          <div>
+            <div class="pub-title">Validation of a Microfluidic Device Prototype for Cancer Detection and Identification: Circulating Tumor Cells Classification Based on Cell Trajectory Analysis Leveraging Cell‑Based Modeling and Machine Learning</div>
+            <div class="pub-meta">R. Rejuan, <strong>Y. Wang</strong>, et&nbsp;al. — <em>International Journal for Numerical Methods in Biomedical Engineering</em>, 2025</div>
+            <div class="pub-links">
+              <a href="https://onlinelibrary.wiley.com/doi/10.1002/cnm.70037">Publisher</a>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/40273905/">PubMed</a>
+              <details><summary>BibTeX</summary>
+<pre>@article{Rejuan2025CTC,
+  author  = {Rejuan, R. and Wang, Y. and others},
+  title   = {Validation of a Microfluidic Device Prototype for Cancer Detection and Identification: Circulating Tumor Cells Classification Based on Cell Trajectory Analysis Leveraging Cell-Based Modeling and Machine Learning},
+  journal = {Int. J. Numer. Methods Biomed. Eng.},
+  year    = {2025},
+  doi     = {10.1002/cnm.70037}
+}</pre></details>
+            </div>
+          </div>
+          <div><span class="chip">Journal</span></div>
+        </article>
+
+        <!-- 2024 -->
+        <article class="pub-item" data-search="Bukac; Canic; Muha; Wang; A computational algorithm for optimal design; bioartificial organ scaffold; PLOS Computational Biology; 2024; poroelastic">
+          <div>
+            <div class="pub-title">A Computational Algorithm for Optimal Design of a Bioartificial Organ Scaffold Architecture</div>
+            <div class="pub-meta">M. Bukač, S. Čanić, B. Muha, <strong>Y. Wang</strong> — <em>PLOS Computational Biology</em>, 2024</div>
+            <div class="pub-links">
+              <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012079">Publisher</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11581400/">PMC</a>
+              <details><summary>BibTeX</summary>
+<pre>@article{Bukac2024iBAP,
+  author  = {Buka{c}, M. and {C}ani\'c, S. and Muha, B. and Wang, Y.},
+  title   = {A Computational Algorithm for Optimal Design of a Bioartificial Organ Scaffold Architecture},
+  journal = {PLOS Computational Biology},
+  year    = {2024},
+  doi     = {10.1371/journal.pcbi.1012079}
+}</pre></details>
+            </div>
+          </div>
+          <div><span class="chip">Journal</span></div>
+        </article>
+
+        <!-- 2022 -->
+        <article class="pub-item" data-search="Wang; Boland; Goel; Wodarz; Komarova; Aspirin; multiscale computational study; eLife; 2022; tumor">
+          <div>
+            <div class="pub-title">Aspirin’s Effect on Kinetic Parameters of Cells Contributes to Its Role in Reducing Incidence of Advanced Colorectal Adenomas: A Multiscale Computational Study</div>
+            <div class="pub-meta"><strong>Y. Wang</strong>, C.R. Boland, A. Goel, D. Wodarz, N.L. Komarova — <em>eLife</em>, 2022</div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.7554/eLife.71953">DOI</a>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9007589/">PMC</a>
+              <details><summary>BibTeX</summary>
+<pre>@article{Wang2022eLife,
+  author  = {Wang, Y. and Boland, C. R. and Goel, A. and Wodarz, D. and Komarova, N. L.},
+  title   = {Aspirin's Effect on Kinetic Parameters of Cells Contributes to Its Role in Reducing Incidence of Advanced Colorectal Adenomas: A Multiscale Computational Study},
+  journal = {eLife},
+  year    = {2022},
+  doi     = {10.7554/eLife.71953}
+}</pre></details>
+            </div>
+          </div>
+          <div><span class="chip">Journal</span></div>
+        </article>
+
+        <article class="pub-item" data-search="Wang; Canic; Bukac; Blaha; Roy; Poroelastic Cell Scaffolds; Fluids; 2022; bioartificial pancreas; poroelastic">
+          <div>
+            <div class="pub-title">Mathematical and Computational Modeling of Poroelastic Cell Scaffolds Used in the Design of an Implantable Bioartificial Pancreas</div>
+            <div class="pub-meta"><strong>Y. Wang</strong>, S. Čanić, M. Bukač, C. Blaha, S. Roy — <em>Fluids</em>, 2022</div>
+            <div class="pub-links">
+              <a href="https://www.mdpi.com/2311-5521/7/7/222">Publisher</a>
+              <a href="https://doi.org/10.3390/fluids7070222">DOI</a>
+              <details><summary>BibTeX</summary>
+<pre>@article{Wang2022Fluids,
+  author  = {Wang, Y. and {C}ani\'c, S. and Buka{c}, M. and Blaha, C. and Roy, S.},
+  title   = {Mathematical and Computational Modeling of Poroelastic Cell Scaffolds Used in the Design of an Implantable Bioartificial Pancreas},
+  journal = {Fluids},
+  year    = {2022},
+  doi     = {10.3390/fluids7070222}
+}</pre></details>
+            </div>
+          </div>
+          <div><span class="chip">Journal</span></div>
+        </article>
+
+        <!-- 2021 -->
+        <article class="pub-item" data-search="Canic; Wang; Bukac; Next‑Generation Mathematical Model for Drug‑Eluting Stents; SIAM Journal on Applied Mathematics; 2021; stents; FSI">
+          <div>
+            <div class="pub-title">A Next‑Generation Mathematical Model for Drug‑Eluting Stents</div>
+            <div class="pub-meta">S. Čanić, <strong>Y. Wang</strong>, M. Bukač — <em>SIAM Journal on Applied Mathematics</em>, 2021</div>
+            <div class="pub-links">
+              <a href="https://epubs.siam.org/doi/10.1137/20M1365144">Publisher</a>
+              <a href="https://par.nsf.gov/biblio/10298947-next-generation-mathematical-model-drug-eluting-stents">NSF</a>
+              <details><summary>BibTeX</summary>
+<pre>@article{Canic2021Stents,
+  author  = {{C}ani\'c, S. and Wang, Y. and Buka{c}, M.},
+  title   = {A Next-Generation Mathematical Model for Drug-​Eluting Stents},
+  journal = {SIAM Journal on Applied Mathematics},
+  year    = {2021},
+  doi     = {10.1137/20M1365144}
+}</pre></details>
+            </div>
+          </div>
+          <div><span class="chip">Journal</span></div>
+        </article>
+
+        <!-- 2019 -->
+        <article class="pub-item" data-search="Bukac; Canic; Tambaca; Wang; Fluid–Structure Interaction; stented coronary artery; CMAME; 2019">
+          <div>
+            <div class="pub-title">Fluid–Structure Interaction Between Pulsatile Blood Flow and a Curved Stented Coronary Artery on a Beating Heart: A Four‑Stent Computational Study</div>
+            <div class="pub-meta">M. Bukač, S. Čanić, J. Tambača, <strong>Y. Wang</strong> — <em>Computer Methods in Applied Mechanics and Engineering</em>, 2019</div>
+            <div class="pub-links">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0045782519301641">Publisher</a>
+              <a href="https://ui.adsabs.harvard.edu/abs/2019CMAME.350..679B/abstract">ADS</a>
+              <details><summary>BibTeX</summary>
+<pre>@article{Bukac2019CMAME,
+  author  = {Buka{c}, M. and {C}ani\'c, S. and Tamba{c}a, J. and Wang, Y.},
+  title   = {Fluid--Structure Interaction Between Pulsatile Blood Flow and a Curved Stented Coronary Artery on a Beating Heart: A Four-Stent Computational Study},
+  journal = {Computer Methods in Applied Mechanics and Engineering},
+  year    = {2019},
+  doi     = {10.1016/j.cma.2019.03.034}
+}</pre></details>
+            </div>
+          </div>
+          <div><span class="chip">Journal</span></div>
+        </article>
+
+        <article class="pub-item" data-search="Wang; Canic; Kokot; Snezhko; Aranson; Quantifying hydrodynamic collective states; Physical Review Fluids; 2019">
+          <div>
+            <div class="pub-title">Quantifying Hydrodynamic Collective States of Magnetic Colloidal Spinners and Rollers</div>
+            <div class="pub-meta"><strong>Y. Wang</strong>, S. Čanić, G. Kokot, A. Snezhko, I.S. Aranson — <em>Physical Review Fluids</em>, 2019</div>
+            <div class="pub-links">
+              <a href="https://link.aps.org/doi/10.1103/PhysRevFluids.4.013701">Publisher</a>
+              <a href="https://www.osti.gov/pages/biblio/1497391">OSTI</a>
+              <details><summary>BibTeX</summary>
+<pre>@article{Wang2019PRF,
+  author  = {Wang, Y. and {C}ani\'c, S. and Kokot, G. and Snezhko, A. and Aranson, I. S.},
+  title   = {Quantifying Hydrodynamic Collective States of Magnetic Colloidal Spinners and Rollers},
+  journal = {Physical Review Fluids},
+  year    = {2019},
+  doi     = {10.1103/PhysRevFluids.4.013701}
+}</pre></details>
+            </div>
+          </div>
+          <div><span class="chip">Journal</span></div>
+        </article>
+
+        <!-- 2017 -->
+        <article class="pub-item" data-search="Wang; Quaini; Canic; Vukicevic; Little; Eccentric Mitral Regurgitant Jets; Cardiovasc Eng Technol; 2017">
+          <div>
+            <div class="pub-title">3D Experimental and Computational Analysis of Eccentric Mitral Regurgitant Jets in a Mock Imaging Heart Chamber</div>
+            <div class="pub-meta"><strong>Y. Wang</strong>, A. Quaini, S. Čanić, M. Vukicevic, S.H. Little — <em>Cardiovascular Engineering and Technology</em>, 2017</div>
+            <div class="pub-links">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/28695443/">PubMed</a>
+              <a href="https://doi.org/10.1007/s13239-017-0316-z">DOI</a>
+              <details><summary>BibTeX</summary>
+<pre>@article{Wang2017CVET,
+  author  = {Wang, Y. and Quaini, A. and {C}ani\'c, S. and Vukicevic, M. and Little, S. H.},
+  title   = {3D Experimental and Computational Analysis of Eccentric Mitral Regurgitant Jets in a Mock Imaging Heart Chamber},
+  journal = {Cardiovascular Engineering and Technology},
+  year    = {2017},
+  doi     = {10.1007/s13239-017-0316-z}
+}</pre></details>
+            </div>
+          </div>
+          <div><span class="chip">Journal</span></div>
+        </article>
+      </div>
+
+      <script>
+        // Client-side filter for publications
+        (function(){
+          const input = document.getElementById('pubFilter');
+          if(!input) return;
+          input.addEventListener('input', function(){
+            const q = this.value.toLowerCase();
+            document.querySelectorAll('#publications .pub-item').forEach(el => {
+              const hay = (el.getAttribute('data-search') || el.innerText).toLowerCase();
+              el.style.display = hay.includes(q) ? '' : 'none';
+            });
+          });
+        })();
+      </script>
+    </section>
+
+    <!-- Teaching -->
+    <section id="teaching" aria-label="Teaching">
+      <h3>Teaching</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Current</h4>
+          <div class="course">
+            <div>
+              <strong>MATH 5334 — Numerical Analysis I</strong>
+              <div class="muted"><small>Fall 2025 • M/W/F 1:00-1:50 • Room 109</small></div>
+            </div>
+            <div>
+              <a href="#">Syllabus</a>
+            </div>
+          </div>
+          <div class="course">
+            <div>
+              <strong>MATH 1452 — Calculus II</strong>
+              <div class="muted"><small>Fall 2025 • M/W/F 11:30–12:40 • Room 016</small></div>
+            </div>
+            <div>
+              <a href="#">Syllabus</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Recent Courses</h4>
+          <ul>
+            <li>2025             — MATH 1452: Calculus II</li>
+            <li>2022, 2023, 2024 — MATH 2450: Calculus III</li>
+            <li>2023,            — MATH 5316: Advanced linear Algebra</li>
+            <li>2023,            — MATH 5344: Topics in Numerical Analysis</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Students -->
+    <section id="students" aria-label="Students and Group">
+      <h3>Students & Group</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Current Ph.D. Students</h4>
+          <ul>
+            <li>Sanjoy, Kumar (2023—Now)</li>
+            <li>Bala, Shujit Kumar(2025—Now)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Alumni</h4>
+          <ul>
+            <li>Dr. Rifat, Rejuan (Ph.D., 2025) </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Service -->
+    <section id="service" aria-label="Service">
+      <h3>Service</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4>Editorial & Reviewing</h4>
+          <ul>
+            <li>Reviewer: SIAM SISC, SINUM, JCP, CMAME…</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Committees & Outreach</h4>
+          <ul>
+            <li>Department Undergraduate Committee (2025-)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-label="Contact">
+      <h3>Contact</h3>
+      <div class="grid grid-2">
+        <form class="card" action="mailto:yifan.wang@ttu.edu" method="post" enctype="text/plain">
+          <h4>Send me a note</h4>
+          <label>
+            <span>Name</span><br />
+            <input required name="name" style="width:100%; padding:.6rem; border-radius:.5rem; border:1px solid var(--ring); background:var(--bg-elev); color:var(--fg)" />
+          </label>
+          <br />
+          <label>
+            <span>Email</span><br />
+            <input required type="email" name="email" style="width:100%; padding:.6rem; border-radius:.5rem; border:1px solid var(--ring); background:var(--bg-elev); color:var(--fg)" />
+          </label>
+          <br />
+          <label>
+            <span>Message</span><br />
+            <textarea required name="message" rows="5" style="width:100%; padding:.6rem; border-radius:.5rem; border:1px solid var(--ring); background:var(--bg-elev); color:var(--fg)"></textarea>
+          </label>
+          <br />
+          <button type="submit" style="padding:.6rem 1rem; border-radius:.6rem; border:1px solid var(--ring); background:var(--accent); color:#001">Send</button>
+          <p class="muted"><small>This uses your email client. For a hosted form, we can wire a service like Formspree.</small></p>
+        </form>
+
+        <div class="card">
+          <h4>Office Hours</h4>
+          <p>By appointment</p>
+          <h4>Contact information</h4>
+          <p>Math 227<br />Department of Mathematics and Statistics<br />Texas Tech University<br />Lubbock, TX</p>
+          <h4>Social</h4>
+          <p><a href="https://scholar.google.com/citations?user=27tRrR0AAAAJ&hl=en">Google Scholar</a> • <a href="https://orcid.org/0000-0003-3292-4972">ORCID</a></p>
+        </div>
+      </div>
+    </section>
+          <h4>Mailing Address</h4>
+          <p>Math 227<br />Department of Mathematics and Statistics<br />Texas Tech University<br />Lubbock, TX</p>
+          <h4>Social</h4>
+          <p><a href="#">@yourhandle</a> on X • <a href="#">LinkedIn</a> • <a href="#">Bluesky</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div>© <span id="year"></span> <strong>First Last</strong>. Last updated <span id="lastUpdated"></span>.</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Structured data for SEO; fill placeholders -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yifan Wang",
+    "jobTitle": "Assistant Professor of Mathematics & Statistics",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Texas Tech University"
+    },
+    "url": "https://www.math.ttu.edu/~yifanwan/",
+    "image": "https://www.math.ttu.edu/~yifanwan/headshot.jpg",
+    "email": "mailto:yifan.wang@ttu.edu",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=27tRrR0AAAAJ&hl=en",
+      "https://orcid.org/0000-0003-3292-4972",
+      "https://www.math.ttu.edu/~yifanwan/"
+    ]
+  }
+  </script>
+
+  <script>
+    // Theme toggle with localStorage
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') root.classList.add('light');
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    // Mobile menu toggle (simple show/hide of nav links)
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn?.addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      if (!links) return;
+      const display = getComputedStyle(links).display;
+      links.style.display = display === 'none' ? 'flex' : 'none';
+    });
+
+    // Publication filter
+    const filterInput = document.getElementById('pubFilter');
+    const pubs = Array.from(document.querySelectorAll('.pub-item'));
+    filterInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      pubs.forEach(el => {
+        const hay = (el.dataset.search || el.textContent).toLowerCase();
+        el.style.display = hay.includes(q) ? 'grid' : 'none';
+      });
+    });
+
+    // Year + last updated
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const d = new Date(document.lastModified);
+    const fmt = new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('lastUpdated').textContent = fmt.format(d);
+  </script>
+</body>
+</html>
